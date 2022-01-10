@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#container 
+{
+    width: 100%;
+    height: 100vh;
+    background: #262626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#nav-input
+{
+    display: none;
+
+}
+
+.hamburguer
+{
+    position: relative;
+    width: 100px;
+    height: 80px;
+    cursor: pointer;
+
+}
+
+.hamburguer span,
+.hamburguer span::before,
+.hamburguer span::after
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: rgba(247,245,176,1);
+    transition: .5s;
+
+}
+
+.hamburguer span
+{
+    top: 45%;
+}
+
+.hamburguer span::before
+{
+    top: -35px;
+}
+.hamburguer span::after
+{
+    top: 35px;
+}
+
+#nav-input:checked ~ .hamburguer span
+{
+    background: rgba(247,245,176,0);
+}
+
+#nav-input:checked ~ .hamburguer span::before
+{
+    transform: translateY(35px) rotate(45deg);
+}
+
+
+#nav-input:checked ~ .hamburguer span::after
+{
+    transform: translateY(-35px) rotate(-45deg);
+}
